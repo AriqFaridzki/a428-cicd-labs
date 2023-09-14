@@ -24,11 +24,10 @@
             }
             stage('Deploy'){
                 steps{
-                    sh sleep 1s
                     sh 'Holding instance for 1 minute.....'
-                    sh sleep 1m
+                    sleep(time: 1, unit: 'MINUTES')
                     sh 'Terminating Instance....'
-                    sh sleep 1s
+                    sleep(time: 1, unit: 'SECONDS')
                     sh './jenkins/scripts/kill.sh' 
                 }
             }
